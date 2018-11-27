@@ -1,0 +1,169 @@
+﻿
+@{
+    Layout = null;
+}
+@model OnlineShop.Areas.Admin.Models.LoginModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Manga store</title>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="/Assets/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+           
+
+    <!-- MetisMenu CSS -->
+    <link href="/Assets/admin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/Assets/admin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/Assets/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <style>
+    
+     
+        body {margin:0px;background:#000;}
+        #video_background {
+            height: 640px;
+            overflow: hidden;
+        }
+        #bg{
+            width:100%;
+            height:680px;
+        }
+        #contant {
+            position: absolute;
+            top: 100px;
+            padding: 100px;
+        }
+
+h1 {
+    font: 600 1.5em/1 'Raleway', sans-serif;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    position: absolute;
+    top: 30px;
+
+    width: 100%;
+}
+
+span, span:after {
+    font-weight: 900;
+    color: #efedce;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    letter-spacing: .1em;
+    padding: .2em 0 .25em 0;
+}
+
+span {
+    font-size: 4em;
+    z-index: 100;
+    text-shadow: .04em .04em 0 #9cb8b3;
+}
+
+span:after {
+    content: attr(data-shadow-text);
+    color: rgba(0,0,0,.35);
+    text-shadow: none;
+    position: absolute;
+    left: .0875em;
+    top: .0875em;
+    z-index: -1;
+    -webkit-mask-image: url(https://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+}
+     </style>
+
+   
+  
+}
+
+</head>
+
+<body >
+    
+    <div id="video_background">
+      <iframe id ="bg" src="https://www.youtube.com/embed/di1NS849gcs?autoplay=1&amp;control=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <h1>WELL COME TO<br><span data-shadow-text="Text-Shadow">Manga Store</span><br>Thanks for choosing</h1>
+
+    <div id="contant">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please Sign In</h3>
+                        </div>
+                        <div class="panel-body">
+                            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                            {
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" });
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.username, new { @class = "form-control", @autofocus = "autofocus" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.PasswordFor(model => model.password, new { @class = "form-control" })
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            @Html.CheckBoxFor(model => model.Remember)Remember Me
+                                        </label>
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <button type="submit" style="background-color: #642EFE" class="btn btn-lg btn-success btn-block">Login</button>
+                                </fieldset>
+
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+       
+    </div>
+   
+    <!-- jQuery -->
+    <script src="/Assets/admin/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Assets/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/Assets/admin/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/Assets/admin/dist/js/sb-admin-2.js"></script>
+
+
+</body>
+
+</html>
